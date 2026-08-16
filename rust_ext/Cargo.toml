@@ -1,0 +1,19 @@
+[package]
+name = "exeminer_rust"
+version = "0.1.0"
+edition = "2021"
+description = "Fast byte-pattern scanner for ExeMiner (PyO3 extension module)"
+
+[lib]
+# cdylib -> compiled as a Python-loadable shared library (.pyd / .so)
+name = "exeminer_rust"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.22", features = ["extension-module"] }
+memchr = "2.7"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

@@ -1,0 +1,13 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "exeminer-rust"
+version = "0.1.0"
+description = "Fast byte-pattern scanner for ExeMiner (Rust/PyO3 extension)"
+requires-python = ">=3.9"
+
+[tool.maturin]
+module-name = "exeminer_rust"
+manifest-path = "Cargo.toml"
